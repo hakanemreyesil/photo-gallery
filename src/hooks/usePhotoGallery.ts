@@ -62,6 +62,7 @@ export function usePhotoGallery() {
       };
       loadSaved();
     }, []);
+
     const takePhoto = async () => {
       const photo = await Camera.getPhoto({
         resultType: CameraResultType.Uri,
@@ -73,6 +74,7 @@ export function usePhotoGallery() {
       setPhotos(newPhotos); 
       Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });    
     };
+    
     const deletePhoto = async (photo: UserPhoto) => {
       // Remove this photo from the Photos reference data array
       const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
