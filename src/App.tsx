@@ -10,8 +10,8 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { images, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
+import { images, map, square, triangle } from 'ionicons/icons';
+import Maps from './pages/Maps';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
@@ -41,8 +41,8 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/Maps">
+            <Maps />
           </Route>
           <Route exact path="/tab2">
             <Tab2 />
@@ -51,18 +51,14 @@ const App: React.FC = () => (
             <Tab3 />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/Maps" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+          <IonTabButton tab="Maps" href="/Maps">
+            <IonIcon aria-hidden="true" icon={map} />
+            <IonLabel>Maps</IonLabel>
           </IonTabButton>
-          {/* <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
-          </IonTabButton> */}
           <IonTabButton tab="tab2" href="/tab2">
   <IonIcon icon={images} />
   <IonLabel>Photos</IonLabel>
