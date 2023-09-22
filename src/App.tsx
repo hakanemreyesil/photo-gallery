@@ -37,6 +37,7 @@ import "./theme/variables.css";
 import Register from "./pages/Register";
 import CardDetail from "./pages/CardDetail";
 import CarDataEdit from "./pages/CarDataEdit";
+import Map from "./pages/Map";
 
 setupIonicReact();
 
@@ -57,6 +58,9 @@ const App: React.FC = () => (
           <Route path="/Register">
             <Register />
           </Route>
+          <Route path="/Map">
+            <Map />
+          </Route>
           <Route exact path="/">
             <Redirect to="/Home" />
             <Home />
@@ -75,6 +79,9 @@ const App: React.FC = () => (
         <Route exact path="/cardedit/:cardId">
           <CarDataEdit />
         </Route>
+        <Route exact path="/carddetail/:cardId">
+          <CardDetail />
+        </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="Home" href="/Home">
@@ -84,6 +91,10 @@ const App: React.FC = () => (
           <IonTabButton tab="Maps" href="/Maps">
             <IonIcon aria-hidden="true" icon={map} />
             <IonLabel>Maps</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="Map" href="/Map">
+            <IonIcon aria-hidden="true" icon={map} />
+            <IonLabel>Map</IonLabel>
           </IonTabButton>
           <IonTabButton tab="Gallery" href="/Gallery">
             <IonIcon icon={images} />

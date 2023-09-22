@@ -61,6 +61,13 @@ const Card: React.FC = () => {
               </IonButton>
               <IonButton
                 expand="block"
+                color="primary"
+                routerLink={`/carddetail/${card.id}`}
+              >
+                Detail
+              </IonButton>
+              <IonButton
+                expand="block"
                 color="danger"
                 onClick={() => handleDeleteClick(card.id)}
               >
